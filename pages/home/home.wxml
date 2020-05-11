@@ -3,8 +3,8 @@
 <view>{{message}}</view>  
 <!-- 循环 -->
 <view wx:for="{{list}}" wx:key="item">
-  <image url="https://s10.mogucdn.com/mlcdn/c45406/180926_45fkj8ifdj4l824l42dgf9hd0h495_750x390.jpg"></image>
-  <text>{{item.image}}</text>
+  <image src="{{item.image}}"></image>
+  <!-- <text>{{item.image}}</text> -->
 </view>
 <!-- 事件绑定 -->
 <view>当前计数：{{count}}</view>
