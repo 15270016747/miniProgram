@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isLoad: true
   },
 
   /**
@@ -26,7 +26,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    setTimeout(() => {
+      this.setData({
+        isLoad: false
+      })
+    },2000)
   },
 
   /**

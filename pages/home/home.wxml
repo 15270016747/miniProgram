@@ -1,3 +1,6 @@
 <!--pages/home/home.wxml-->
 <text class="title">hello world</text>
-<button size="mini">按钮</button>
+<button hover-class="hoverBtn" >按钮</button>
+<button size="mini"  plain loading="{{isLoad}}">按钮</button>
+<text decode>1 &nbsp; 2</text>
+<!-- <image src></image> -->

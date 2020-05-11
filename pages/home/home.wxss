@@ -3,3 +3,7 @@
   color: red;
   font-size: 25px;
 }
+.hoverBtn {
+  background-color: red;
+  color: #fff;
+}
