@@ -1,66 +1,56 @@
 // pages/home/home.js
+let app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  
   data: {
-
+    message: 'Hello world',
+    list: [1,2,3,4],
+    count: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad() {
+    const _this = this
+    wx.request({
+      
+      url: "http://152.136.185.210:8000/api/n3/home/multidata",
+      success:function(res) {
+        const list = res.data.data.banner.list
+        console.log(list)
+        _this.setData({
+          list: list
+        })
+        // console.log(home)
+      }
+    })
   },
+  countIncrease() {
+    this.setData({
+      count:++this.data.count
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    })
+    // 界面不会刷新
+    // this.data.count++
+    console.log(this.data.count)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleGetUserInfo(event) {
+    console.log(event.detail.userInfo)
+    
+    console.log(app.globalData.name)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  countDecrease() {
+    this.setData({
+      count: --this.data.count
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  onHide: function() {
+    console.log("home is onHide")
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  onPageScroll(scroll) {
+    // console.log(scroll.scrollTop)
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  onReachBottom() { 
+    console.log(111)
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onPullDownRefresh() {
+    console.log("刷新")
   }
 })

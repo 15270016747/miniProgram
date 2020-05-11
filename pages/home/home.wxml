@@ -1,3 +1,15 @@
 <!--pages/home/home.wxml-->
-<text class="title">hello world</text>
-<button size="mini">按钮</button>
+<!-- 1.小程序的数据绑定: Mustache{{}} -->
+<view>{{message}}</view>  
+<!-- 循环 -->
+<view wx:for="{{list}}" wx:key="item">
+  <image url="https://s10.mogucdn.com/mlcdn/c45406/180926_45fkj8ifdj4l824l42dgf9hd0h495_750x390.jpg"></image>
+  <text>{{item.image}}</text>
+</view>
+<!-- 事件绑定 -->
+<view>当前计数：{{count}}</view>
+<button bindtap="countIncrease"  size="mini">+</button>
+<button bindtap="countDecrease"  size="mini">-</button>
+<button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">按钮</button>
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
