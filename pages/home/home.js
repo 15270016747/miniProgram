@@ -5,9 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoad: true
+    isLoad: true,
+    image:""
   },
-
+  handleChooseAlbum() {
+    wx.chooseImage({
+      success: (res) => {
+        console.log(res.tempFilePaths ) 
+        this.setData({
+          image: res.tempFilePaths[0]
+        }) 
+      }
+    })
+    console.log(this.data.image)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

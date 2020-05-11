@@ -3,4 +3,6 @@
 <button hover-class="hoverBtn" >按钮</button>
 <button size="mini"  plain loading="{{isLoad}}">按钮</button>
 <text decode>1 &nbsp; 2</text>
-<!-- <image src></image> -->
+<button bindtap="handleChooseAlbum">选择图片</button>
+<image lazy-load src="{{image}}"></image>
+<text>111</text>
