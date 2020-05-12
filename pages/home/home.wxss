@@ -1,5 +1,11 @@
 /* pages/home/home.wxss */
-.title {
-  color: red;
-  font-size: 25px;
+.home-swiper {
+  height: 400rpx;
+}
+.home-swiper .home-swiper-item image {
+  width: 750rpx;
+  height: 100%;
+}
+.active {
+  color: red
 }

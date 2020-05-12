@@ -1,0 +1,12 @@
+var name = 'hwj';
+var age = 25;
+function getNum(price,num) {
+  var num = num || 2
+  return num.toFixed(num)
+}
+
+module.exports = {
+  name:name,
+  age:age,
+  getNum:getNum
+}

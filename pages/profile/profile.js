@@ -1,39 +1,18 @@
-// pages/home/home.js
+// pages/profile/profile.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banner:[],
-    nowTime: new Date().toLocaleString(),
-    isActive:false
+
   },
-  toRed() {
-    this.setData({
-      isActive: !this.data.isActive
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: "http://152.136.185.210:8000/api/n3/home/multidata",
-      success: res => {
-        let banner = res.data.data.banner.list
-        this.setData({
-          banner
-        })
-        console.log(banner)
-      }
-    })
-    setInterval(() => {
-      this.setData({
-        nowTime:new Date().toLocaleString()
-      })
-    },1000)
-    console.log(this)
+
   },
 
   /**

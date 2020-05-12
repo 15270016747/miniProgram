@@ -1,6 +1,35 @@
 <!--pages/home/home.wxml-->
-<text class="title">hello world</text>
-<button size="mini">按钮</button>
+<include src="/wxml/header.wxml"/>
+<swiper 
+  circular
+  autoplay
+  indicator-dots
+  indicator-color="#ff5777" 
+  indicator-active-color="#fff"
+  class="home-swiper">
+  <swiper-item wx:for="{{banner}}" wx:key="acm" class="home-swiper-item">
+    <image src="{{item.image}}"></image>
+  </swiper-item>
+</swiper>
+<view style="height:50px;line-height:50px" class="{{isActive? 'active':''}}">{{nowTime}}</view>
+<button style="display:inline-block" bindtap="toRed">change</button>
+<block wx:for="{{9}}" wx:for-item="num" wx:key="item">
+  <view>{{num}}</view>
+</block>
+<wxs module="info"  src="../../wxs/info.wxs" />
+<!-- <wxs module="info"> 
+var name = 'hwj';
+var age = 25;
+function getNum(a,b) {
+  return a+b
+}
+module.exports = {
+  name:name,
+  age:age,
+  getNum:getNum
+}
 
-<view>1.初始小程序</view>
-<view>啊啊啊啊</view>
+</wxs> -->
+<view>{{info.name}}</view>
+<view>{{info.getNum(2.55656,3)}}</view>
+<include src="/wxml/footer.wxml"/>
