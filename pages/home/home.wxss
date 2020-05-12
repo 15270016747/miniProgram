@@ -1,5 +1,12 @@
 /* pages/home/home.wxss */
-.title {
-  color: red;
-  font-size: 25px;
+.content {
+  background-color: #eee;
+ white-space: nowrap;
+}
+.item {
+  background-color: red;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  display: inline-block;
 }
