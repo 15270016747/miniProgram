@@ -1,0 +1,12 @@
+<!--components/swiper/swiper.wxml-->
+<swiper 
+  circular
+  autoplay
+  indicator-dots
+  indicator-color="#ff5777" 
+  indicator-active-color="#fff"
+  class="home-swiper">
+  <swiper-item wx:for="{{banner}}" wx:key="acm" class="home-swiper-item">
+    <image class="banner-image" src="{{item.image}}"></image>
+  </swiper-item>
+</swiper>

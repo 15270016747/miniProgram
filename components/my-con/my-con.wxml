@@ -1,0 +1,5 @@
+<!--components/my-con/my-con.wxml-->
+<button bind:tap="handleClick" 
+        hover-class="active-btn" 
+        class="title title-class">{{title}}</button>
+<!-- <view>count:{{count}}</view> -->

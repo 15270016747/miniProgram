@@ -1,21 +1,19 @@
 <!--pages/home/home.wxml-->
-<include src="/wxml/header.wxml"/>
-<swiper 
-  circular
-  autoplay
-  indicator-dots
-  indicator-color="#ff5777" 
-  indicator-active-color="#fff"
-  class="home-swiper">
-  <swiper-item wx:for="{{banner}}" wx:key="acm" class="home-swiper-item">
-    <image src="{{item.image}}"></image>
-  </swiper-item>
-</swiper>
+<!-- <include src="/wxml/header.wxml"/> -->
+<home-swiper wx:if="{{isCreate}}" banner="{{banner}}"/>
+<tab-control bind:handletagclick="handletagclick" titleList="{{['流行','新款','精选']}}" id="tab"/>
+<my-slot>
+  <view slot="center">aaa</view>
+</my-slot>
+<my-con bind:change="handleChange" title="按我一下" titleClass="red"/>
+<view>count:{{count}}</view>
+
 <view style="height:50px;line-height:50px" class="{{isActive? 'active':''}}">{{nowTime}}</view>
-<button style="display:inline-block" bindtap="toRed">change</button>
+<button bind:touchend="handleTouchmove" style="display:inline-block" bind:tap="toRed">change</button>
 <block wx:for="{{9}}" wx:for-item="num" wx:key="item">
   <view>{{num}}</view>
 </block>
+<slider value="40"></slider>
 <wxs module="info"  src="../../wxs/info.wxs" />
 <!-- <wxs module="info"> 
 var name = 'hwj';
@@ -31,5 +29,21 @@ module.exports = {
 
 </wxs> -->
 <view>{{info.name}}</view>
-<view>{{info.getNum(2.55656,3)}}</view>
+<view>{{info.getNum("2.55656",3)}}</view>
+
+<view class="list">
+  <block 
+         wx:for="{{messageList}}" 
+         wx:key="item" 
+        
+         wx:for-item="message">
+    <view class="message"
+          data-index="{{index}}"
+          data-item="{{message}}" 
+          bind:tap="handleMeaaageTap">
+      {{message}}
+    </view>
+  </block>
+</view>
+<view class="input">请输入：<input type=text"  bindinput="handleInput"/></view>
 <include src="/wxml/footer.wxml"/>

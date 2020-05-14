@@ -2,7 +2,8 @@ var name = 'hwj';
 var age = 25;
 function getNum(price,num) {
   var num = num || 2
-  return num.toFixed(num)
+  var f_price = parseFloat(price)
+  return f_price.toFixed(num)
 }
 
 module.exports = {

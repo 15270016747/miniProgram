@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "home-swiper": "/components/swiper/swiper",
+    "my-con":"/components/my-con/my-con",
+    "tab-control": "/components/tab-control/tab-control",
+    "my-slot": "/components/my-slot/my-slot"
+  }
 }

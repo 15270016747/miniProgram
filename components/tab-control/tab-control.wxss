@@ -1,0 +1,23 @@
+/* components/tab-control/tab-control.wxss */
+.tab {
+  display: flex;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}
+.tab .tab-item {
+  flex:1;
+}
+.tab .active::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 6rpx;
+  background-color: #ff5777;
+  margin: 0 auto;
+  margin-top: -6rpx;
+}
+.active {
+  color: #ff5777;
+}

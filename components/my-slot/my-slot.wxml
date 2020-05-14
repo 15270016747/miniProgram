@@ -1,0 +1,6 @@
+<!--components/my-slot/my-slot.wxml-->
+<view class="content">
+  <view class="item"><slot name="left"/></view>
+  <view class="item"><slot name="center"/></view>
+  <view class="item"><slot name="right"/></view>
+</view>

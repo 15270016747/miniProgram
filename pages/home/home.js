@@ -7,12 +7,39 @@ Page({
   data: {
     banner:[],
     nowTime: new Date().toLocaleString(),
-    isActive:false
+    isActive:false,
+    messageList:['hwj','xt','2020'],
+    count:0,
+    isCreate: true
   },
-  toRed() {
+  handleMeaaageTap(e) {
+    console.log(e)
+    const dataset = e.currentTarget.dataset
+    console.log(dataset)
+  },
+  handleChange(e) {
+    console.log(e)
     this.setData({
-      isActive: !this.data.isActive
+      count: ++this.data.count
     })
+  },
+  isCreate() {
+
+  },
+  toRed(e) {
+    this.setData({
+      isActive: !this.data.isActive,
+      isCreate: !this.data.isCreate
+    })
+    const tab = this.selectComponent("#tab")
+    tab.incrementCount()
+    
+  },
+  handleTouchmove(e) {
+    // console.log(e)
+  },
+  handletagclick(e) {
+    console.log(e.detail.index)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -35,7 +62,9 @@ Page({
     },1000)
     console.log(this)
   },
-
+  handleInput() {
+    console.log(1111)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

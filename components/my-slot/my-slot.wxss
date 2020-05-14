@@ -1,0 +1,8 @@
+/* components/my-slot/my-slot.wxss */
+.content {
+  display: flex;
+  text-align: center;
+}
+.content .item {
+  flex: 1;
+}
